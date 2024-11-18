@@ -13,6 +13,9 @@
         android:theme="@style/Theme._407_final_project"
         tools:targetApi="31">
         <activity
+            android:name=".LevelSelect"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
