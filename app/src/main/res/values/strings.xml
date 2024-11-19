@@ -6,9 +6,12 @@
     <string name="top_bar_desc">Bar at top of screen</string>
 
     <string name="level1_button_text">1</string>
+    <string name="level1_label">Level 1</string>
+
     <string name="level2_button_text">2</string>
     <string name="level3_button_text">3</string>
     <string name="level4_button_text">4</string>
     <string name="level5_button_text">5</string>
-    <string name="levels_label">Levels</string>
+    <string name="level_select_label">Levels</string>
+    <string name="back_button_desc">Back button</string>
 </resources>

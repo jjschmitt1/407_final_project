@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:keepScreenOn="true"
+    tools:context=".Level1">
+
+    <ImageView
+        android:id = "@+id/level1_top_bar"
+        android:contentDescription="@string/top_bar_desc"
+        android:src="@drawable/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/level1_back_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/arrow_back"
+        android:contentDescription="@string/back_button_desc"
+        app:layout_constraintStart_toStartOf="@id/level1_top_bar"
+        app:layout_constraintTop_toTopOf="@id/level1_top_bar"
+        android:padding="0dp"
+        android:background="@null" />
+
+    <TextView
+        android:id="@+id/level1_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/level1_label"
+        android:textSize="40sp"
+        android:textColor="@color/white"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/level1_top_bar"
+        app:layout_constraintBottom_toBottomOf="@id/level1_top_bar"/>
+
+    <com.cs407.a407_final_project.GameSurfaceView
+        android:id="@+id/level1_game_surface"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/level1_top_bar"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
