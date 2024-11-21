@@ -8,26 +8,20 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class MainActivity : AppCompatActivity() {
+class HowToPlay : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_how_to_play)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
-        findViewById<Button>(R.id.get_started).setOnClickListener {
-            val intent = Intent(this, LevelSelect::class.java)
+        findViewById<Button>(R.id.BTN_return_to_home).setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
-
-        findViewById<Button>(R.id.how_to_play).setOnClickListener { 
-            val intent = Intent(this, HowToPlay::class.java)
-            startActivity(intent)
-        }
-
     }
 }

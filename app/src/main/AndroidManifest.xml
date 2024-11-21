@@ -2,7 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-feature android:name="android.hardware.sensor.accelerometer"
+    <uses-feature
+        android:name="android.hardware.sensor.accelerometer"
         android:required="true" />
 
     <application
@@ -12,11 +13,14 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
+        android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/Theme._407_final_project"
-        tools:targetApi="31"
-        android:screenOrientation="portrait"
-        tools:ignore="DiscouragedApi">
+        tools:ignore="DiscouragedApi"
+        tools:targetApi="31">
+        <activity
+            android:name=".HowToPlay"
+            android:exported="false" />
         <activity
             android:name=".Level1"
             android:exported="false" />

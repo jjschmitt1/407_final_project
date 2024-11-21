@@ -4,6 +4,7 @@
     <string name="how_to_play">How to Play</string>
     <string name="get_started">Get Started</string>
     <string name="top_bar_desc">Bar at top of screen</string>
+    <string name="return_to_home">Return to Home Screen</string>
 
     <string name="level1_button_text">1</string>
     <string name="level1_label">Level 1</string>
@@ -14,4 +15,8 @@
     <string name="level5_button_text">5</string>
     <string name="level_select_label">Levels</string>
     <string name="back_button_desc">Back button</string>
+
+    <string name="how_to_play_text">The goal of MarbleMaze is to get your marble to the end of the maze!
+    To move the marble, you must tilt and rotate your phone. When you beat a level, you can advance onto the next level until you have
+    completed all of the levels or just replay your favorite levels! Be careful not to hit the obstacles placed in the maze!</string>
 </resources>
