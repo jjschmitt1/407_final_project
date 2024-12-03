@@ -5,6 +5,9 @@
     <string name="get_started">Get Started</string>
     <string name="top_bar_desc">Bar at top of screen</string>
     <string name="return_to_home">Return to Home Screen</string>
+    <string name="settings_header">Settings</string>
+    <string name="settings_ball_color">Marble Color - Current color:</string>
+    <string name="settings_wall_color">Wall Color - Current color:</string>
 
     <string name="level1_button_text">1</string>
     <string name="level1_label">Level 1</string>

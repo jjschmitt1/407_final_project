@@ -20,14 +20,24 @@ class LevelSelect : AppCompatActivity() {
             insets
         }
 
+        // navigate to settings
+        findViewById<ImageButton>(R.id.settings_cog).setOnClickListener {
+            val intent = Intent(this, SettingsPage::class.java)
+            startActivity(intent)
+        }
+
+        // navigate to home screen
         findViewById<ImageButton>(R.id.back_button).setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
 
+        // navigate to level 1
         findViewById<Button>(R.id.level1_button).setOnClickListener {
             val intent = Intent(this, Level1::class.java)
             startActivity(intent)
         }
+
+
     }
 }
