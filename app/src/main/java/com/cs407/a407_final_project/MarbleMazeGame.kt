@@ -2,7 +2,7 @@ package com.cs407.a407_final_project
 
 import android.graphics.*
 
-class MarbleMazeGame(private val surfaceWidth: Int, private val surfaceHeight: Int) {
+class MarbleMazeGame(private val surfaceWidth: Int, private val surfaceHeight: Int, private val levelID: Int) {
 
     private val ball = Ball(surfaceWidth, surfaceHeight)
     private val walls = mutableListOf<Wall>()
@@ -16,9 +16,15 @@ class MarbleMazeGame(private val surfaceWidth: Int, private val surfaceHeight: I
 
         // canvas width = 1080
         // canvas height = 2116
-        walls.add(Wall(0, 500, 600, 60))
-        walls.add(Wall(480, 1000, 600, 60))
-        walls.add(Wall(0, 1500, 600, 60))
+        if (levelID == 1) {
+            walls.add(Wall(0, 500, 600, 60))
+            walls.add(Wall(480, 1000, 600, 60))
+            walls.add(Wall(0, 1500, 600, 60))
+        }else if (levelID == 2){
+            walls.add(Wall(480, 500, 600, 60))
+            walls.add(Wall(480, 1500, 600, 60))
+            walls.add(Wall(0, 1000, 600, 60))
+        }
 
         newGame()
     }

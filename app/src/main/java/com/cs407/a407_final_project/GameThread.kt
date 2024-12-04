@@ -4,7 +4,7 @@ import android.view.SurfaceHolder
 import android.graphics.PointF
 import android.util.Log
 
-class GameThread(private val surfaceHolder: SurfaceHolder) : Thread() {
+class GameThread(private val surfaceHolder: SurfaceHolder, private val levelID: Int) : Thread() {
 
     private var marbleMazeGame: MarbleMazeGame
     private var threadRunning = false
@@ -17,7 +17,7 @@ class GameThread(private val surfaceHolder: SurfaceHolder) : Thread() {
         val canvas = surfaceHolder.lockCanvas()
         Log.d("width", canvas.width.toString())
         Log.d("height", canvas.height.toString())
-        marbleMazeGame = MarbleMazeGame(canvas.width, canvas.height)
+        marbleMazeGame = MarbleMazeGame(canvas.width, canvas.height, levelID)
         surfaceHolder.unlockCanvasAndPost(canvas)
     }
 
