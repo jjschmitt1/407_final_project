@@ -1,12 +1,13 @@
 package com.cs407.a407_final_project
 
+import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Paint
 import android.graphics.Rect
+import androidx.core.content.ContextCompat
 
-const val WALL_COLOR = -0x888888
 
-class Wall(x: Int, y: Int, surfaceWidth: Int, surfaceHeight: Int) {
+class Wall(x: Int, y: Int, surfaceWidth: Int, surfaceHeight: Int, context: Context) {
 
     // Create wall's rectangle based on location and dimensions
     var rect: Rect = Rect(x, y, x + surfaceWidth, y + surfaceHeight)
@@ -15,8 +16,11 @@ class Wall(x: Int, y: Int, surfaceWidth: Int, surfaceHeight: Int) {
 
     init {
 
-        // Wall color
-        paint.color = WALL_COLOR
+        val sharedPreferences = context.getSharedPreferences("GamePreferences", Context.MODE_PRIVATE)
+        val wallColorId = sharedPreferences.getInt("wallColor", R.color.def)
+        val wallColor = ContextCompat.getColor(context, wallColorId)
+        // Set wall color
+        paint.color = wallColor
     }
 
     fun draw(canvas: Canvas) {

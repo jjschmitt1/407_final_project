@@ -1,11 +1,12 @@
 package com.cs407.a407_final_project
 
+import android.content.Context
 import android.graphics.*
+import androidx.core.content.ContextCompat
 
 const val BALL_RADIUS = 40
-const val BALL_COLOR = 0xffaaaaff
 
-class Ball(private val surfaceWidth: Int, private val surfaceHeight: Int) {
+class Ball(private val surfaceWidth: Int, private val surfaceHeight: Int, context: Context) {
 
     private var paint = Paint(Paint.ANTI_ALIAS_FLAG)
     private var center = Point(BALL_RADIUS, BALL_RADIUS)
@@ -14,7 +15,14 @@ class Ball(private val surfaceWidth: Int, private val surfaceHeight: Int) {
         get() = center.y + BALL_RADIUS
 
     init {
-        paint.color = BALL_COLOR.toInt()
+
+        val sharedPreferences = context.getSharedPreferences("GamePreferences", Context.MODE_PRIVATE)
+        val marbleColorId = sharedPreferences.getInt("marbleColor", R.color.def)
+        val marbleColor = ContextCompat.getColor(context, marbleColorId)
+
+        // set color
+        paint.color = marbleColor
+
     }
 
     fun setCenter(x: Int, y: Int) {

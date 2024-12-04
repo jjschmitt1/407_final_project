@@ -1,10 +1,11 @@
 package com.cs407.a407_final_project
 
+import android.content.Context
 import android.graphics.*
 
-class MarbleMazeGame(private val surfaceWidth: Int, private val surfaceHeight: Int) {
+class MarbleMazeGame(private val surfaceWidth: Int, private val surfaceHeight: Int, context: Context) {
 
-    private val ball = Ball(surfaceWidth, surfaceHeight)
+    private val ball = Ball(surfaceWidth, surfaceHeight, context)
     private val walls = mutableListOf<Wall>()
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
     private val goal = Goal(0, 2016, 100, 100)
@@ -16,9 +17,9 @@ class MarbleMazeGame(private val surfaceWidth: Int, private val surfaceHeight: I
 
         // canvas width = 1080
         // canvas height = 2116
-        walls.add(Wall(0, 500, 600, 60))
-        walls.add(Wall(480, 1000, 600, 60))
-        walls.add(Wall(0, 1500, 600, 60))
+        walls.add(Wall(0, 500, 600, 60, context))
+        walls.add(Wall(480, 1000, 600, 60, context))
+        walls.add(Wall(0, 1500, 600, 60, context))
 
         newGame()
     }

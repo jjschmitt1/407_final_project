@@ -1,10 +1,11 @@
 package com.cs407.a407_final_project
 
+import android.content.Context
 import android.view.SurfaceHolder
 import android.graphics.PointF
 import android.util.Log
 
-class GameThread(private val surfaceHolder: SurfaceHolder) : Thread() {
+class GameThread(private val surfaceHolder: SurfaceHolder, context: Context) : Thread() {
 
     private var marbleMazeGame: MarbleMazeGame
     private var threadRunning = false
@@ -17,7 +18,7 @@ class GameThread(private val surfaceHolder: SurfaceHolder) : Thread() {
         val canvas = surfaceHolder.lockCanvas()
         Log.d("width", canvas.width.toString())
         Log.d("height", canvas.height.toString())
-        marbleMazeGame = MarbleMazeGame(canvas.width, canvas.height)
+        marbleMazeGame = MarbleMazeGame(canvas.width, canvas.height, context)
         surfaceHolder.unlockCanvasAndPost(canvas)
     }
 
