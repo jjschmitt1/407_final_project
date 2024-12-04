@@ -9,6 +9,7 @@ class MarbleMazeGame(private val surfaceWidth: Int, private val surfaceHeight: I
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
     private val goal = Goal(0, 2016, 100, 100)
     private var gameOver = false
+    private val spikes = mutableListOf<Spike>()
 
     init {
         paint.textSize = 90f
@@ -20,10 +21,16 @@ class MarbleMazeGame(private val surfaceWidth: Int, private val surfaceHeight: I
             walls.add(Wall(0, 500, 600, 60))
             walls.add(Wall(480, 1000, 600, 60))
             walls.add(Wall(0, 1500, 600, 60))
-        }else if (levelID == 2){
+        } else if (levelID == 2){
             walls.add(Wall(480, 500, 600, 60))
             walls.add(Wall(480, 1500, 600, 60))
             walls.add(Wall(0, 1000, 600, 60))
+        } else if (levelID == 3) {
+            // just to show how spikes work, change actual level later
+            spikes.add(Spike(200f, 200f, 100, 0))
+            spikes.add(Spike(200f, 400f, 100, 90))
+            spikes.add(Spike(200f, 600f, 100, 180))
+            spikes.add(Spike(200f, 800f, 100, 270))
         }
 
         newGame()
@@ -49,6 +56,12 @@ class MarbleMazeGame(private val surfaceWidth: Int, private val surfaceHeight: I
             }
         }
 
+        for (spike in spikes) {
+            if (ball.intersects(spike)) {
+                ball.setCenter(surfaceWidth / 2, BALL_RADIUS + 10)
+            }
+        }
+
         // Check for win
         if (ball.intersects(goal)) {
             gameOver = true
@@ -66,6 +79,9 @@ class MarbleMazeGame(private val surfaceWidth: Int, private val surfaceHeight: I
             wall.draw(canvas)
         }
         goal.draw(canvas)
+        for (spike in spikes) {
+            spike.draw(canvas)
+        }
 
         if (gameOver) {
             val text = "You won!"
