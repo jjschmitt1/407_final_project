@@ -9,6 +9,7 @@
     <string name="settings_ball_color">Marble Color - Current color:</string>
     <string name="settings_wall_color">Wall Color - Current color:</string>
 
+    <string name="title">MarbleMaze</string>
     <string name="level1_button_text">1</string>
     <string name="level1_label">Level 1</string>
 

@@ -28,9 +28,6 @@
             android:name=".Level1"
             android:exported="false" />
         <activity
-            android:name=".Level2"
-            android:exported="false" />
-        <activity
             android:name=".LevelSelect"
             android:exported="false" />
         <activity

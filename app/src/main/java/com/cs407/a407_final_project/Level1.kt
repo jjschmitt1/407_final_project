@@ -35,9 +35,10 @@ class Level1 : AppCompatActivity(), SensorEventListener {
 
         sensorManager = getSystemService(SENSOR_SERVICE) as SensorManager
         accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER)
+        val level = intent.getIntExtra("Level", 1)
 
         surfaceView = findViewById(R.id.level1_game_surface)
-        surfaceView.setLevelID(1)
+        surfaceView.setLevelID(level)
     }
 
     override fun onResume() {
@@ -64,4 +65,5 @@ class Level1 : AppCompatActivity(), SensorEventListener {
     override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {
         // Nothing to do
     }
+
 }
