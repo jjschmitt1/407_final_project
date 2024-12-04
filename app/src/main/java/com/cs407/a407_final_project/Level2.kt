@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class Level1 : AppCompatActivity(), SensorEventListener {
+class Level2 : AppCompatActivity(), SensorEventListener{
 
     private lateinit var sensorManager: SensorManager
     private var accelerometer: Sensor? = null
@@ -21,14 +21,14 @@ class Level1 : AppCompatActivity(), SensorEventListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_level1)
+        setContentView(R.layout.activity_level2)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
-        findViewById<ImageButton>(R.id.level1_back_button).setOnClickListener {
+        findViewById<ImageButton>(R.id.level2_back_button).setOnClickListener {
             val intent = Intent(this, LevelSelect::class.java)
             startActivity(intent)
         }
@@ -36,8 +36,8 @@ class Level1 : AppCompatActivity(), SensorEventListener {
         sensorManager = getSystemService(SENSOR_SERVICE) as SensorManager
         accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER)
 
-        surfaceView = findViewById(R.id.level1_game_surface)
-        surfaceView.setLevelID(1)
+        surfaceView = findViewById(R.id.level2_game_surface)
+        surfaceView.setLevelID(2)
     }
 
     override fun onResume() {

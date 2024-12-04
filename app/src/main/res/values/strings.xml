@@ -13,6 +13,8 @@
     <string name="level1_label">Level 1</string>
 
     <string name="level2_button_text">2</string>
+    <string name="level2_label">Level 2</string>
+
     <string name="level3_button_text">3</string>
     <string name="level4_button_text">4</string>
     <string name="level5_button_text">5</string>
