@@ -7,7 +7,7 @@ class MarbleMazeGame(private val surfaceWidth: Int, private val surfaceHeight: I
     private val ball = Ball(surfaceWidth, surfaceHeight)
     private val walls = mutableListOf<Wall>()
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
-    private val goal = Goal(0, 2016, 100, 100)
+    private var goal = Goal(0, 2016, 100, 100)
     private var gameOver = false
 
     init {
@@ -24,6 +24,16 @@ class MarbleMazeGame(private val surfaceWidth: Int, private val surfaceHeight: I
             walls.add(Wall(480, 500, 600, 60))
             walls.add(Wall(480, 1500, 600, 60))
             walls.add(Wall(0, 1000, 600, 60))
+        }else if (levelID == 3) {
+            walls.add(Wall(0, 500, 750, 60))
+            walls.add(Wall(340, 1500, 750, 60))
+            walls.add(Wall(690, 500, 60,500))
+            walls.add(Wall(340, 1000, 60, 500))
+            goal = Goal(0, 2016, 100, 100)
+        }else if (levelID == 4) {
+            walls.add(Wall(630, 0, 60, 2116))
+            walls.add(Wall(400, 0, 60, 2116))
+            goal = Goal(490, 2016, 100, 100)
         }
 
         newGame()
