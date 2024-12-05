@@ -20,7 +20,7 @@ class GameSurfaceView(context: Context, attrs: AttributeSet) :
     }
 
     override fun surfaceCreated(holder: SurfaceHolder) {
-        gameThread = GameThread(holder, levelID)
+        gameThread = GameThread(this.context, holder, levelID)
         gameThread?.start()
     }
 

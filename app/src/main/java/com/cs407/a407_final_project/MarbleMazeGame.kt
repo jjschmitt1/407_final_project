@@ -1,8 +1,14 @@
 package com.cs407.a407_final_project
 
+import android.app.Activity
+import android.content.Context
+import android.content.Intent
 import android.graphics.*
+import android.os.Handler
+import android.os.Looper
 
-class MarbleMazeGame(private val surfaceWidth: Int, private val surfaceHeight: Int, private val levelID: Int) {
+
+class MarbleMazeGame(private val context: Context, private val surfaceWidth: Int, private val surfaceHeight: Int, private val levelID: Int) {
 
     private val ball = Ball(surfaceWidth, surfaceHeight)
     private val walls = mutableListOf<Wall>()
@@ -22,15 +28,22 @@ class MarbleMazeGame(private val surfaceWidth: Int, private val surfaceHeight: I
             walls.add(Wall(480, 1000, 600, 60))
             walls.add(Wall(0, 1500, 600, 60))
         } else if (levelID == 2){
-            walls.add(Wall(480, 500, 600, 60))
-            walls.add(Wall(480, 1500, 600, 60))
-            walls.add(Wall(0, 1000, 600, 60))
+            walls.add(Wall(0, 500, 600, 60))
+            walls.add(Wall(480, 1000, 600, 60))
+            walls.add(Wall(0, 1500, 600, 60))
+            spikes.add(Spike(740f, 560f, 100, 0))
+            spikes.add(Spike(240f, 1060f, 100, 0))
+            spikes.add(Spike(740f, 1560f, 100, 0))
         } else if (levelID == 3) {
-            // just to show how spikes work, change actual level later
-            spikes.add(Spike(200f, 200f, 100, 0))
-            spikes.add(Spike(200f, 400f, 100, 90))
-            spikes.add(Spike(200f, 600f, 100, 180))
-            spikes.add(Spike(200f, 800f, 100, 270))
+            walls.add(Wall(0, 500, 600, 60))
+            walls.add(Wall(480, 1000, 600, 60))
+            walls.add(Wall(0, 1500, 600, 60))
+            walls.add(Wall(790, 0, 60, 460))
+            walls.add(Wall(190, 500, 60, 460))
+            walls.add(Wall(790, 1000, 60, 460))
+            spikes.add(Spike(740f, 560f, 100, 0))
+            spikes.add(Spike(240f, 1060f, 100, 0))
+            spikes.add(Spike(740f, 1560f, 100, 0))
         }else if (levelID == 4) {
             walls.add(Wall(0, 500, 750, 60))
             walls.add(Wall(340, 1500, 750, 60))
@@ -38,9 +51,15 @@ class MarbleMazeGame(private val surfaceWidth: Int, private val surfaceHeight: I
             walls.add(Wall(340, 1000, 60, 500))
             goal = Goal(0, 2016, 100, 100)
         }else if (levelID == 5) {
-            walls.add(Wall(630, 0, 60, 2116))
-            walls.add(Wall(400, 0, 60, 2116))
-            goal = Goal(490, 2016, 100, 100)
+            walls.add(Wall(0, 500, 750, 60))
+            walls.add(Wall(340, 1500, 750, 60))
+            walls.add(Wall(690, 500, 60,500))
+            walls.add(Wall(340, 1000, 60, 500))
+            goal = Goal(0, 2016, 100, 100)
+            spikes.add(Spike(1080f, 800f, 150, 270))
+            spikes.add(Spike(690f, 1500f, 150, 0))
+            spikes.add(Spike(690f, 1000f, 150, 270))
+            spikes.add(Spike(0f, 1250f, 150, 90))
 
         }
 
@@ -102,6 +121,17 @@ class MarbleMazeGame(private val surfaceWidth: Int, private val surfaceHeight: I
                 text, surfaceWidth / 2f - textBounds.exactCenterX(),
                 surfaceHeight / 2f - textBounds.exactCenterY(), paint
             )
+
+            // automatically switch to next level (may not be worth it due to performance)
+            if (levelID < 5) {
+                val intent = Intent(this.context, Level1::class.java)
+                intent.putExtra("Level", levelID + 1)
+                (context as Activity).finish()
+                Handler(Looper.getMainLooper()).postDelayed({
+                    context.startActivity(intent)
+                }, 100)
+            }
         }
     }
+
 }
