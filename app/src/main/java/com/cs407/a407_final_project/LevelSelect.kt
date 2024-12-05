@@ -46,6 +46,11 @@ class LevelSelect : AppCompatActivity() {
             startActivity(intent)
         }
 
-
+        // navigate to level 3
+        findViewById<Button>(R.id.level3_button).setOnClickListener {
+            val intent = Intent(this, Level1::class.java)
+            intent.putExtra("Level", 3)
+            startActivity(intent)
+        }
     }
 }
