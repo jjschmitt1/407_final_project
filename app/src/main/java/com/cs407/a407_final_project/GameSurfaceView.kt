@@ -9,13 +9,18 @@ class GameSurfaceView(context: Context, attrs: AttributeSet) :
     SurfaceView(context, attrs), SurfaceHolder.Callback {
 
     private var gameThread: GameThread? = null
+    private var levelID: Int = 0;
 
     init {
         holder.addCallback(this)
     }
 
+    constructor(context: Context, attrs: AttributeSet, levelID: Int) : this(context, attrs) {
+        this.levelID = levelID
+    }
+
     override fun surfaceCreated(holder: SurfaceHolder) {
-        gameThread = GameThread(holder, context)
+        gameThread = GameThread(context, holder, levelID)
         gameThread?.start()
     }
 
@@ -29,5 +34,9 @@ class GameSurfaceView(context: Context, attrs: AttributeSet) :
 
     fun changeAcceleration(x: Float, y: Float) {
         gameThread?.changeAcceleration(x, y)
+    }
+
+    fun setLevelID(id: Int){
+        levelID = id
     }
 }

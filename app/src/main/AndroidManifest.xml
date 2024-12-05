@@ -26,7 +26,8 @@
             android:exported="false" />
         <activity
             android:name=".Level1"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".LevelSelect"
             android:exported="false" />

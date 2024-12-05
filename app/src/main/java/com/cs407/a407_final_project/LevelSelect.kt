@@ -35,9 +35,64 @@ class LevelSelect : AppCompatActivity() {
         // navigate to level 1
         findViewById<Button>(R.id.level1_button).setOnClickListener {
             val intent = Intent(this, Level1::class.java)
+            intent.putExtra("Level", 1)
             startActivity(intent)
         }
 
+        // navigate to level 2
+        findViewById<Button>(R.id.level2_button).setOnClickListener {
+            val intent = Intent(this, Level1::class.java)
+            intent.putExtra("Level", 2)
+            startActivity(intent)
+        }
 
+        // navigate to level 3
+        findViewById<Button>(R.id.level3_button).setOnClickListener {
+            val intent = Intent(this, Level1::class.java)
+            intent.putExtra("Level", 3)
+            startActivity(intent)
+        }
+
+        findViewById<Button>(R.id.level4_button).setOnClickListener {
+            val intent = Intent(this, Level1::class.java)
+            intent.putExtra("Level", 4)
+            startActivity(intent)
+        }
+
+        findViewById<Button>(R.id.level5_button).setOnClickListener {
+            val intent = Intent(this, Level1::class.java)
+            intent.putExtra("Level", 5)
+            startActivity(intent)
+        }
+
+        findViewById<Button>(R.id.level6_button).setOnClickListener {
+            val intent = Intent(this, Level1::class.java)
+            intent.putExtra("Level", 6)
+            startActivity(intent)
+        }
+
+        findViewById<Button>(R.id.level7_button).setOnClickListener {
+            val intent = Intent(this, Level1::class.java)
+            intent.putExtra("Level", 7)
+            startActivity(intent)
+        }
+
+        findViewById<Button>(R.id.level8_button).setOnClickListener {
+            val intent = Intent(this, Level1::class.java)
+            intent.putExtra("Level", 8)
+            startActivity(intent)
+        }
+
+        findViewById<Button>(R.id.level9_button).setOnClickListener {
+            val intent = Intent(this, Level1::class.java)
+            intent.putExtra("Level", 9)
+            startActivity(intent)
+        }
+
+        findViewById<Button>(R.id.level10_button).setOnClickListener {
+            val intent = Intent(this, Level1::class.java)
+            intent.putExtra("Level", 10)
+            startActivity(intent)
+        }
     }
 }

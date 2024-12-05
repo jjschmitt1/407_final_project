@@ -119,6 +119,66 @@
             android:text="@string/level5_button_text"
             android:textSize="40sp"/>
 
+        <Button
+            android:id="@+id/level6_button"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:cornerRadius="0dp"
+            android:text="@string/level6_button_text"
+            android:textSize="40sp"/>
+
+        <Button
+            android:id="@+id/level7_button"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:cornerRadius="0dp"
+            android:text="@string/level7_button_text"
+            android:textSize="40sp"/>
+
+        <Button
+            android:id="@+id/level8_button"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:cornerRadius="0dp"
+            android:text="@string/level8_button_text"
+            android:textSize="40sp"/>
+
+        <Button
+            android:id="@+id/level9_button"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:cornerRadius="0dp"
+            android:text="@string/level9_button_text"
+            android:textSize="40sp"/>
+
+        <Button
+            android:id="@+id/level10_button"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:cornerRadius="0dp"
+            android:text="@string/level10_button_text"
+            android:textSize="20sp"/>
+
     </GridLayout>
 
 
