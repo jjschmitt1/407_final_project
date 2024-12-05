@@ -64,5 +64,35 @@ class LevelSelect : AppCompatActivity() {
             intent.putExtra("Level", 5)
             startActivity(intent)
         }
+
+        findViewById<Button>(R.id.level6_button).setOnClickListener {
+            val intent = Intent(this, Level1::class.java)
+            intent.putExtra("Level", 6)
+            startActivity(intent)
+        }
+
+        findViewById<Button>(R.id.level7_button).setOnClickListener {
+            val intent = Intent(this, Level1::class.java)
+            intent.putExtra("Level", 7)
+            startActivity(intent)
+        }
+
+        findViewById<Button>(R.id.level8_button).setOnClickListener {
+            val intent = Intent(this, Level1::class.java)
+            intent.putExtra("Level", 8)
+            startActivity(intent)
+        }
+
+        findViewById<Button>(R.id.level9_button).setOnClickListener {
+            val intent = Intent(this, Level1::class.java)
+            intent.putExtra("Level", 9)
+            startActivity(intent)
+        }
+
+        findViewById<Button>(R.id.level10_button).setOnClickListener {
+            val intent = Intent(this, Level1::class.java)
+            intent.putExtra("Level", 10)
+            startActivity(intent)
+        }
     }
 }

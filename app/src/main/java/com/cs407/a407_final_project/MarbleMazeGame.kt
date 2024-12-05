@@ -61,6 +61,30 @@ class MarbleMazeGame(private val context: Context, private val surfaceWidth: Int
             spikes.add(Spike(690f, 1000f, 150, 270))
             spikes.add(Spike(0f, 1250f, 150, 90))
 
+        }else if (levelID == 6){
+            walls.add(Wall(0, 400, 850, 60))
+            walls.add(Wall(790, 400, 60, 1300))
+            walls.add(Wall(200, 1700, 650, 60))
+            walls.add(Wall(200, 800, 60, 900))
+            walls.add(Wall(200, 800, 450, 60))
+            walls.add(Wall(590, 800, 60, 700))
+            walls.add(Wall(430, 1440, 160, 60))
+            walls.add(Wall(430, 950, 60, 500))
+            goal = Goal(490, 1350, 100, 100)
+        }else if (levelID == 7){
+            walls.add(Wall(0, 400, 850, 60))
+            walls.add(Wall(790, 400, 60, 1300))
+            walls.add(Wall(200, 1700, 650, 60))
+            walls.add(Wall(200, 800, 60, 900))
+            walls.add(Wall(200, 800, 450, 60))
+            walls.add(Wall(590, 800, 60, 700))
+            walls.add(Wall(430, 1440, 160, 60))
+            walls.add(Wall(430, 950, 60, 500))
+            goal = Goal(490, 1350, 100, 100)
+            spikes.add(Spike(820f, 2116f, 250,0))
+            spikes.add(Spike(0f, 1866f, 180,90))
+            spikes.add(Spike(200f, 460f, 180, 180))
+            spikes.add(Spike(790f, 680f, 200,270))
         }
 
         newGame()
@@ -123,7 +147,7 @@ class MarbleMazeGame(private val context: Context, private val surfaceWidth: Int
             )
 
             // automatically switch to next level (may not be worth it due to performance)
-            if (levelID < 5) {
+            if (levelID < 7) {
                 val intent = Intent(this.context, Level1::class.java)
                 intent.putExtra("Level", levelID + 1)
                 (context as Activity).finish()

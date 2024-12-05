@@ -19,6 +19,11 @@
     <string name="level3_button_text">3</string>
     <string name="level4_button_text">4</string>
     <string name="level5_button_text">5</string>
+    <string name="level6_button_text">6</string>
+    <string name="level7_button_text">7</string>
+    <string name="level8_button_text">8</string>
+    <string name="level9_button_text">9</string>
+    <string name="level10_button_text">10</string>
     <string name="level_select_label">Levels</string>
     <string name="back_button_desc">Back button</string>
 
