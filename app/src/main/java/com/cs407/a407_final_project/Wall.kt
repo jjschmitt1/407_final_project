@@ -4,7 +4,7 @@ import android.graphics.Canvas
 import android.graphics.Paint
 import android.graphics.Rect
 
-const val WALL_COLOR = -0x888888
+const val WALL_COLOR = -0x00888888
 
 class Wall(x: Int, y: Int, surfaceWidth: Int, surfaceHeight: Int) {
 

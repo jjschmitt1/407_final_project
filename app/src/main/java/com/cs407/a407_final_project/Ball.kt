@@ -75,4 +75,20 @@ class Ball(private val surfaceWidth: Int, private val surfaceHeight: Int) {
         // Return true if distance from ball center to nearest point is less than ball radius
         return deltaX * deltaX + deltaY * deltaY < BALL_RADIUS * BALL_RADIUS
     }
+
+    fun intersects(spike: Spike): Boolean {
+        val bounds = RectF()
+        spike.spike.computeBounds(bounds, true)
+
+        // Find point on wall that is closest to ball center
+        val nearestX = Math.max(bounds.left, Math.min(center.x.toFloat(), bounds.right))
+        val nearestY = Math.max(bounds.top, Math.min(center.y.toFloat(), bounds.bottom))
+
+        // Measure distance from nearest point to ball center
+        val deltaX = center.x - nearestX
+        val deltaY = center.y - nearestY
+
+        // Return true if distance from ball center to nearest point is less than ball radius
+        return deltaX * deltaX + deltaY * deltaY < BALL_RADIUS * BALL_RADIUS
+    }
 }
