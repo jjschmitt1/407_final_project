@@ -24,6 +24,7 @@
     <string name="level8_button_text">8</string>
     <string name="level9_button_text">9</string>
     <string name="level10_button_text">10</string>
+    <string name="level11_button_text">11</string>
     <string name="level_select_label">Levels</string>
     <string name="back_button_desc">Back button</string>
 

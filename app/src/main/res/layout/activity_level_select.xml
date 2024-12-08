@@ -178,6 +178,17 @@
             app:cornerRadius="0dp"
             android:text="@string/level10_button_text"
             android:textSize="20sp"/>
+        <Button
+            android:id="@+id/level11_button"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:cornerRadius="0dp"
+            android:text="@string/level11_button_text"
+            android:textSize="20sp"/>
 
     </GridLayout>
 

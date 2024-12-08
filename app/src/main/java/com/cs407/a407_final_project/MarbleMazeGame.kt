@@ -28,13 +28,19 @@ class MarbleMazeGame(private val context: Context, private val surfaceWidth: Int
             walls.add(Wall(480, 1000, 600, 60, context))
             walls.add(Wall(0, 1500, 600, 60, context))
         } else if (levelID == 2){
+            walls.add(Wall(0, 500, 750, 60, context))
+            walls.add(Wall(340, 1500, 750, 60, context))
+            walls.add(Wall(690, 500, 60,500, context))
+            walls.add(Wall(340, 1000, 60, 500, context))
+            goal = Goal(0, 2016, 100, 100)
+        } else if (levelID == 3) {
             walls.add(Wall(0, 500, 600, 60, context))
             walls.add(Wall(480, 1000, 600, 60, context))
             walls.add(Wall(0, 1500, 600, 60, context))
             spikes.add(Spike(740f, 560f, 100, 0))
             spikes.add(Spike(240f, 1060f, 100, 0))
             spikes.add(Spike(740f, 1560f, 100, 0))
-        } else if (levelID == 3) {
+        }else if (levelID == 4) {
             walls.add(Wall(0, 500, 600, 60, context))
             walls.add(Wall(480, 1000, 600, 60, context))
             walls.add(Wall(0, 1500, 600, 60, context))
@@ -44,12 +50,6 @@ class MarbleMazeGame(private val context: Context, private val surfaceWidth: Int
             spikes.add(Spike(740f, 560f, 100, 0))
             spikes.add(Spike(240f, 1060f, 100, 0))
             spikes.add(Spike(740f, 1560f, 100, 0))
-        }else if (levelID == 4) {
-            walls.add(Wall(0, 500, 750, 60, context))
-            walls.add(Wall(340, 1500, 750, 60, context))
-            walls.add(Wall(690, 500, 60,500, context))
-            walls.add(Wall(340, 1000, 60, 500, context))
-            goal = Goal(0, 2016, 100, 100)
         }else if (levelID == 5) {
             walls.add(Wall(0, 500, 750, 60, context))
             walls.add(Wall(340, 1500, 750, 60, context))
@@ -85,6 +85,97 @@ class MarbleMazeGame(private val context: Context, private val surfaceWidth: Int
             spikes.add(Spike(0f, 1866f, 180,90))
             spikes.add(Spike(200f, 460f, 180, 180))
             spikes.add(Spike(790f, 680f, 200,270))
+        }else if (levelID == 8) {
+            // RHS
+            spikes.add(Spike(750f, 300f, 150, 270))
+            spikes.add(Spike(825f, 500f, 150, 270))
+            spikes.add(Spike(900f, 700f, 150, 270))
+            spikes.add(Spike(975f, 900f, 150, 270))
+            spikes.add(Spike(1050f, 1100f, 150, 270))
+            spikes.add(Spike(975f, 1300f, 150, 270))
+            spikes.add(Spike(900f, 1500f, 150, 270))
+            spikes.add(Spike(825f, 1700f, 150, 270))
+            spikes.add(Spike(750f, 1900f, 150, 270))
+            // LHS
+            spikes.add(Spike(250f, 200f, 150, 90))
+            spikes.add(Spike(325f, 400f, 150, 90))
+            spikes.add(Spike(400f, 600f, 150, 90))
+            spikes.add(Spike(475f, 800f, 150, 90))
+
+            spikes.add(Spike(550f, 1000f, 150, 90))
+
+            spikes.add(Spike(475f, 1200f, 150, 90))
+            spikes.add(Spike(400f, 1400f, 150, 90))
+            spikes.add(Spike(325f, 1600f, 150, 90))
+            spikes.add(Spike(250f, 1800f, 150, 90))
+
+            goal = Goal(440, 2016, 100, 100)
+
+        } else if (levelID == 9){
+            walls.add(Wall(440, 0, 40, 300, context))
+            walls.add(Wall(620, 0, 40, 500, context))
+            walls.add(Wall(200, 500, 460, 40, context))
+            walls.add(Wall(200, 250, 40, 250, context))
+            spikes.add(Spike(260f, 50f, 80, 180))
+
+            walls.add(Wall(0, 800, 700, 40, context))
+            spikes.add(Spike(720f, 820f, 180, 0))
+
+            walls.add(Wall(200, 1200, 880, 40, context))
+            spikes.add(Spike(800f, 1280f, 120, 0))
+            spikes.add(Spike(550f, 1280f, 120, 0))
+            spikes.add(Spike(300f, 1280f, 120, 0))
+
+            walls.add(Wall(0, 1600, 880, 40, context))
+            spikes.add(Spike(700f, 1680f, 120, 0))
+            spikes.add(Spike(450f, 1680f, 120, 0))
+            spikes.add(Spike(200f, 1680f, 120, 0))
+
+            spikes.add(Spike(0f, 1820f, 100, 90))
+            spikes.add(Spike(180f, 2040f, 100, 0))
+        } else if (levelID == 10){
+            spikes.add(Spike(900f, 880f, 120, 0))
+            spikes.add(Spike(500f, 880f, 120, 0))
+            spikes.add(Spike(100f, 880f, 120, 0))
+
+            spikes.add(Spike(700f, 480f, 120, 0))
+            spikes.add(Spike(300f, 480f, 120, 0))
+
+            spikes.add(Spike(900f, 1680f, 120, 0))
+            spikes.add(Spike(500f, 1680f, 120, 0))
+            spikes.add(Spike(100f, 1680f, 120, 0))
+
+            spikes.add(Spike(700f, 1280f, 120, 0))
+            spikes.add(Spike(300f, 1280f, 120, 0))
+
+            goal = Goal(490, 2016, 100, 100)
+        } else if (levelID == 11){
+            walls.add(Wall(200, 200, 880, 40, context))
+            spikes.add(Spike(0f, 600f, 180, 0))
+            spikes.add(Spike(400f, 240f, 180, 180))
+            spikes.add(Spike(400f, 600f, 180, 0))
+            spikes.add(Spike(800f, 240f, 180, 180))
+
+
+            walls.add(Wall(0, 600, 880, 40, context))
+            spikes.add(Spike(500f, 1000f, 180, 0))
+            spikes.add(Spike(480f, 640f, 180, 180))
+            spikes.add(Spike(900f, 1000f, 180, 0))
+            spikes.add(Spike(880f, 640f, 180, 180))
+
+            walls.add(Wall(200, 1000, 880, 40, context))
+            spikes.add(Spike(0f, 1400f, 180, 0))
+            spikes.add(Spike(400f, 1040f, 180, 180))
+            spikes.add(Spike(400f, 1400f, 180, 0))
+            spikes.add(Spike(800f, 1040f, 180, 180))
+
+            walls.add(Wall(0, 1400, 880, 40, context))
+            spikes.add(Spike(500f, 1800f, 180, 0))
+            spikes.add(Spike(480f, 1440f, 180, 180))
+            spikes.add(Spike(900f, 1800f, 180, 0))
+            spikes.add(Spike(880f, 1440f, 180, 180))
+
+            walls.add(Wall(200, 1800, 880, 40, context))
         }
 
         newGame()
