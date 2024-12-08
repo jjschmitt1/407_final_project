@@ -138,6 +138,8 @@ class MarbleMazeGame(private val context: Context, private val surfaceWidth: Int
         }
 
         if (gameOver) {
+            //Update unlockedLevel
+            LevelSelect.saveProgress(this.context, levelID+1)
             val text = "You won!"
             val textBounds = Rect()
             paint.getTextBounds(text, 0, text.length, textBounds)

@@ -1,5 +1,6 @@
 package com.cs407.a407_final_project
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -20,79 +21,47 @@ class LevelSelect : AppCompatActivity() {
             insets
         }
 
-        // navigate to settings
+        // Load unlocked level from SharedPreferences
+        val sharedPreferences = getSharedPreferences("GameProgress", Context.MODE_PRIVATE)
+        val unlockedLevel = sharedPreferences.getInt("UnlockedLevel", 1) // Default to level 1
+
+        // Enable buttons based on unlocked levels
+        for (level in 1..10) {
+            val buttonId = resources.getIdentifier("level${level}_button", "id", packageName)
+            val button = findViewById<Button>(buttonId)
+            if (level <= unlockedLevel) {
+                button.isEnabled = true
+                button.setOnClickListener {
+                    val intent = Intent(this, Level1::class.java)
+                    intent.putExtra("Level", level)
+                    startActivity(intent)
+                }
+            } else {
+                button.isEnabled = false
+            }
+        }
+
+        // Navigate to settings
         findViewById<ImageButton>(R.id.settings_cog).setOnClickListener {
             val intent = Intent(this, SettingsPage::class.java)
             startActivity(intent)
         }
 
-        // navigate to home screen
+        // Navigate to home screen
         findViewById<ImageButton>(R.id.back_button).setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
+    }
 
-        // navigate to level 1
-        findViewById<Button>(R.id.level1_button).setOnClickListener {
-            val intent = Intent(this, Level1::class.java)
-            intent.putExtra("Level", 1)
-            startActivity(intent)
-        }
-
-        // navigate to level 2
-        findViewById<Button>(R.id.level2_button).setOnClickListener {
-            val intent = Intent(this, Level1::class.java)
-            intent.putExtra("Level", 2)
-            startActivity(intent)
-        }
-
-        // navigate to level 3
-        findViewById<Button>(R.id.level3_button).setOnClickListener {
-            val intent = Intent(this, Level1::class.java)
-            intent.putExtra("Level", 3)
-            startActivity(intent)
-        }
-
-        findViewById<Button>(R.id.level4_button).setOnClickListener {
-            val intent = Intent(this, Level1::class.java)
-            intent.putExtra("Level", 4)
-            startActivity(intent)
-        }
-
-        findViewById<Button>(R.id.level5_button).setOnClickListener {
-            val intent = Intent(this, Level1::class.java)
-            intent.putExtra("Level", 5)
-            startActivity(intent)
-        }
-
-        findViewById<Button>(R.id.level6_button).setOnClickListener {
-            val intent = Intent(this, Level1::class.java)
-            intent.putExtra("Level", 6)
-            startActivity(intent)
-        }
-
-        findViewById<Button>(R.id.level7_button).setOnClickListener {
-            val intent = Intent(this, Level1::class.java)
-            intent.putExtra("Level", 7)
-            startActivity(intent)
-        }
-
-        findViewById<Button>(R.id.level8_button).setOnClickListener {
-            val intent = Intent(this, Level1::class.java)
-            intent.putExtra("Level", 8)
-            startActivity(intent)
-        }
-
-        findViewById<Button>(R.id.level9_button).setOnClickListener {
-            val intent = Intent(this, Level1::class.java)
-            intent.putExtra("Level", 9)
-            startActivity(intent)
-        }
-
-        findViewById<Button>(R.id.level10_button).setOnClickListener {
-            val intent = Intent(this, Level1::class.java)
-            intent.putExtra("Level", 10)
-            startActivity(intent)
+    companion object {
+        // Method to save progress (call this when a level is completed)
+        fun saveProgress(context: Context, level: Int) {
+            val sharedPreferences = context.getSharedPreferences("GameProgress", Context.MODE_PRIVATE)
+            val unlockedLevel = sharedPreferences.getInt("UnlockedLevel", 1)
+            if (level > unlockedLevel) {
+                sharedPreferences.edit().putInt("UnlockedLevel", level).apply()
+            }
         }
     }
 }
