@@ -132,7 +132,7 @@ class MarbleMazeGame(private val context: Context, private val surfaceWidth: Int
             spikes.add(Spike(200f, 1680f, 120, 0))
 
             spikes.add(Spike(0f, 1820f, 100, 90))
-            spikes.add(Spike(180f, 2040f, 100, 0))
+            spikes.add(Spike(180f, 2116f, 100, 0))
         } else if (levelID == 10){
             spikes.add(Spike(900f, 880f, 120, 0))
             spikes.add(Spike(500f, 880f, 120, 0))
@@ -151,31 +151,57 @@ class MarbleMazeGame(private val context: Context, private val surfaceWidth: Int
             goal = Goal(490, 2016, 100, 100)
         } else if (levelID == 11){
             walls.add(Wall(200, 200, 880, 40, context))
-            spikes.add(Spike(0f, 600f, 180, 0))
-            spikes.add(Spike(400f, 240f, 180, 180))
-            spikes.add(Spike(400f, 600f, 180, 0))
-            spikes.add(Spike(800f, 240f, 180, 180))
+            spikes.add(Spike(0f, 600f, 150, 0))
+            spikes.add(Spike(450f, 240f, 150, 180))
+            spikes.add(Spike(550f, 600f, 150, 0))
+            spikes.add(Spike(1000f, 240f, 150, 180))
 
 
             walls.add(Wall(0, 600, 880, 40, context))
-            spikes.add(Spike(500f, 1000f, 180, 0))
-            spikes.add(Spike(480f, 640f, 180, 180))
-            spikes.add(Spike(900f, 1000f, 180, 0))
-            spikes.add(Spike(880f, 640f, 180, 180))
+            spikes.add(Spike(380f, 1000f, 150, 0))
+            spikes.add(Spike(230f, 640f, 150, 180))
+            spikes.add(Spike(930f, 1000f, 150, 0))
+            spikes.add(Spike(780f, 640f, 150, 180))
 
             walls.add(Wall(200, 1000, 880, 40, context))
-            spikes.add(Spike(0f, 1400f, 180, 0))
-            spikes.add(Spike(400f, 1040f, 180, 180))
-            spikes.add(Spike(400f, 1400f, 180, 0))
-            spikes.add(Spike(800f, 1040f, 180, 180))
+            spikes.add(Spike(0f, 1400f, 150, 0))
+            spikes.add(Spike(450f, 1040f, 150, 180))
+            spikes.add(Spike(550f, 1400f, 150, 0))
+            spikes.add(Spike(1000f, 1040f, 150, 180))
 
             walls.add(Wall(0, 1400, 880, 40, context))
-            spikes.add(Spike(500f, 1800f, 180, 0))
-            spikes.add(Spike(480f, 1440f, 180, 180))
-            spikes.add(Spike(900f, 1800f, 180, 0))
-            spikes.add(Spike(880f, 1440f, 180, 180))
+            spikes.add(Spike(380f, 1800f, 150, 0))
+            spikes.add(Spike(230f, 1440f, 150, 180))
+            spikes.add(Spike(930f, 1800f, 150, 0))
+            spikes.add(Spike(780f, 1440f, 150, 180))
 
             walls.add(Wall(200, 1800, 880, 40, context))
+        } else if (levelID == 12) {
+            // top line
+            for (i in 100..900 step 100) {
+                spikes.add(Spike(i.toFloat(), 180f, 100, 180))
+            }
+            // right line
+            for (i in 340..1940 step 100) {
+                spikes.add(Spike(900f, i.toFloat(), 100, 270))
+            }
+            // bottom line
+            for (i in 160..760 step 100) {
+                spikes.add(Spike(i.toFloat(), 1980f, 100, 0))
+            }
+            // left line
+            for (i in 440..1840 step 100) {
+                spikes.add(Spike(160f, i.toFloat(), 100, 90))
+            }
+            // inner top line
+            for (i in 300..600 step 100) {
+                spikes.add(Spike(i.toFloat(), 440f, 100, 180))
+            }
+            // inner right line
+            for (i in 600..1700 step 100) {
+                spikes.add(Spike(600f, i.toFloat(), 100, 270))
+            }
+            goal = Goal(330, 540, 100, 100)
         }
 
         newGame()
@@ -231,7 +257,7 @@ class MarbleMazeGame(private val context: Context, private val surfaceWidth: Int
         if (gameOver) {
             //Update unlockedLevel
             LevelSelect.saveProgress(this.context, levelID+1)
-            val text = "You won!"
+            val text = "Level Complete!"
             val textBounds = Rect()
             paint.getTextBounds(text, 0, text.length, textBounds)
             canvas.drawText(
@@ -240,7 +266,7 @@ class MarbleMazeGame(private val context: Context, private val surfaceWidth: Int
             )
 
             // automatically switch to next level (may not be worth it due to performance)
-            if (levelID < 7) {
+            if (levelID < 11) {
                 val intent = Intent(context, Level1::class.java)
                 intent.putExtra("Level", levelID + 1)
                 (context as Activity).finish()

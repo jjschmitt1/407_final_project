@@ -54,141 +54,178 @@
 
     <GridLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:useDefaultMargins="true"
-        android:columnCount="4"
-        app:layout_constraintTop_toBottomOf="@id/level_select_top_bar">
+        android:columnCount="3"
+        android:padding="4dp"
+        app:layout_constraintTop_toBottomOf="@id/level_select_top_bar"
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <Button
             android:id="@+id/level1_button"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:cornerRadius="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:gravity="center"
+            android:layout_gravity="fill"
             android:text="@string/level1_button_text"
             android:textSize="40sp"/>
 
         <Button
             android:id="@+id/level2_button"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:cornerRadius="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:gravity="center"
+            android:layout_gravity="fill"
             android:text="@string/level2_button_text"
             android:textSize="40sp"/>
 
         <Button
             android:id="@+id/level3_button"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:cornerRadius="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:gravity="center"
+            android:layout_gravity="fill"
             android:text="@string/level3_button_text"
             android:textSize="40sp"/>
 
         <Button
             android:id="@+id/level4_button"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:cornerRadius="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:gravity="center"
+            android:layout_gravity="fill"
             android:text="@string/level4_button_text"
             android:textSize="40sp"/>
 
         <Button
             android:id="@+id/level5_button"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:cornerRadius="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:gravity="center"
+            android:layout_gravity="fill"
             android:text="@string/level5_button_text"
             android:textSize="40sp"/>
 
         <Button
             android:id="@+id/level6_button"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:cornerRadius="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:gravity="center"
+            android:layout_gravity="fill"
             android:text="@string/level6_button_text"
             android:textSize="40sp"/>
 
         <Button
             android:id="@+id/level7_button"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:cornerRadius="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:gravity="center"
+            android:layout_gravity="fill"
             android:text="@string/level7_button_text"
             android:textSize="40sp"/>
 
         <Button
             android:id="@+id/level8_button"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:cornerRadius="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:gravity="center"
+            android:layout_gravity="fill"
             android:text="@string/level8_button_text"
             android:textSize="40sp"/>
 
         <Button
             android:id="@+id/level9_button"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:cornerRadius="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:gravity="center"
+            android:layout_gravity="fill"
             android:text="@string/level9_button_text"
             android:textSize="40sp"/>
 
         <Button
             android:id="@+id/level10_button"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:cornerRadius="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:gravity="center"
+            android:layout_gravity="fill"
             android:text="@string/level10_button_text"
-            android:textSize="20sp"/>
+            android:textSize="40sp"/>
         <Button
             android:id="@+id/level11_button"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:cornerRadius="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:gravity="center"
+            android:layout_gravity="fill"
             android:text="@string/level11_button_text"
-            android:textSize="20sp"/>
+            android:textSize="40sp"/>
+        <Button
+            android:id="@+id/level12_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:cornerRadius="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:gravity="center"
+            android:layout_gravity="fill"
+            android:text="@string/level12_button_text"
+            android:textSize="40sp"/>
 
     </GridLayout>
 

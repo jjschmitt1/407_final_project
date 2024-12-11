@@ -26,7 +26,7 @@ class LevelSelect : AppCompatActivity() {
         val unlockedLevel = sharedPreferences.getInt("UnlockedLevel", 1) // Default to level 1
 
         // Enable buttons based on unlocked levels
-        for (level in 1..11) {
+        for (level in 1..12) {
             val buttonId = resources.getIdentifier("level${level}_button", "id", packageName)
             val button = findViewById<Button>(buttonId)
             if (level <= unlockedLevel) {
